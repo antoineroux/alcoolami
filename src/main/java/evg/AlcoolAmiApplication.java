@@ -1,5 +1,6 @@
 package evg;
 
+import evg.bac.BacResource;
 import evg.users.UsersResource;
 import evg.data.DataSource;
 import evg.data.InMemoryDataSource;
@@ -22,7 +23,9 @@ public class AlcoolAmiApplication extends Application {
 
         Router router = new Router(getContext());
         router.attach("/", IndexResource.class);
+        router.attach("/parcours", ParcoursResource.class);
         router.attach("/participants", UsersResource.class);
+        router.attach("/bac", BacResource.class);
         router.attachDefault(directory);
 
         return router;

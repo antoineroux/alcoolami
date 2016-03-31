@@ -1,47 +1,79 @@
-<!doctype html>
-<html lang="en" ng-app="application">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zTravel</title>
-    <link href="assets/css/app.css" rel="stylesheet" type="text/css">
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/routes.js"></script>
-    <script src="assets/js/angular.js"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-  <style>
-    .menu-bar {margin-bottom: 0;}
-    #sub-nav, .messages {border-right: 1px solid #eee;}
-    .medium-grid-content {padding:1rem !important;}
-    .main-content {background: #fff;}
-  </style>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Alcool-ami</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <body>
-    <div class="grid-frame vertical">
-      <div class="grid-block shrink wrap">
-        <div class="grid-content collapse small-12 medium-6">
-          <ul class="menu-bar dark">
-            <li><a href="#">zTravel</a></li>
-          </ul>
-        </div>
-        <div class="grid-content collapse small-12 medium-6">
-          <ul class="menu-bar dark">
-            <li ui-sref-active="is-active"><a ui-sref="listings">Listings</a></li>
-            <li ui-sref-active="is-active"><a ui-sref="photos">Photos</a></li>
-            <li ui-sref-active="is-active" ><a ui-sref="reviews">Reviews</a></li>
-          </ul>
-        </div>
-      </div>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <div class="grid-block">
-        <div class="grid-block show-for-medium medium-6">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12697.758051669445!2d-121.95161!3d37.284716!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe18714a9ccfec34d!2sZURB!5e0!3m2!1sen!2sus!4v1417659982534" width="100%" height="1200px" frameborder="0" style="border:0"></iframe>
-        </div>
-        <div ng-class="['ui-animation']" ui-view class="grid-block small-12 medium-6 wrap main-content">
-          
-        </div>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10%">
+        <h1>Alcool-ami</h1>
       </div>
     </div>
-  </body>
+    <div class="row">
+      <div class="two columns "><a href="/">Faire un relevé</a></div>
+      <div class="two columns "><a href="/parcours">Le parcours !</a></div>
+    </div>
+    <div class="row" id="status" >
+      <div class="one-half column" id="message" style="display: none;">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="one-half column">
+        <p>Après avoir soufflé, rentre ton score ici :</p>
+        <form id="bac-form">
+          <div class="row">
+            <div class="six columns">
+              <label for="participant">Participant</label>
+              <select class="u-full-width" name="user" id="participant">
+              </select>
+            </div>
+            <div class="six columns">
+              <label for="bac">Alcoolémie</label>
+              <input class="u-full-width" name="bac" id="bac" placeholder="0.5" step="0.1" min="0" type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <input class="button-primary" value="Je ne suis pas bourré" type="submit" id="ok">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>

@@ -38,6 +38,7 @@ public class InMemoryDataSource implements DataSource {
 
     @Override
     public List<BloodAlcoholConcentration> getAllBac(User user) {
+        if (bacMap.get(user) == null) return new ArrayList<>();
         return bacMap.get(user).stream().sorted().collect(Collectors.toList());
     }
 }
